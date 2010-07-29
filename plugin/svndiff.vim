@@ -191,7 +191,7 @@ function s:Svndiff_update(...)
 	" Could not detect RCS type, print message and exit
 	
 	if ! has_key(s:rcs_type, fname) 
-		echom "Svndiff: Warning, file " . fname . " is not managed by subversion or git"
+		echom "Svndiff: Warning, file " . fname . " is not managed by subversion, mercurial or git"
 		unlet s:is_active[fname]
 		return
 	end
@@ -333,7 +333,7 @@ function Svndiff(...)
 	let cmd = exists("a:1") ? a:1 : ''
 	let fname = bufname("%")
 	if fname == ""
-		echom "Buffer has no file name, can not do a svn diff"
+		echom "Buffer has no file name, can not do a diff"
 		return
 	endif
 
