@@ -188,6 +188,7 @@ hi Tb_VisibleChanged ctermbg=black ctermfg=magenta " Colour of current changed t
 
 " totalcommander, file explorer. Required NERDTree plugin
 noremap <silent> <F10> :NERDTreeToggle<CR>
+let NERDTreeWinSize = 25 
 
 " --------- Projects
 let g:proj_flags = "imstg"
