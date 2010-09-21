@@ -181,8 +181,8 @@ function s:Svndiff_update(...)
 			let s:rcs_cmd[fname] = s:rcs_cmd_cvs
 		end
 
-		let info = system("hg status " . fname)
-		if v:shell_error == 0
+		let info = system("hg stat " . fname)
+		if match(info, fname) != 0
 			let s:rcs_type[fname] = "hg"
 			let s:rcs_cmd[fname] = s:rcs_cmd_hg
 		end
