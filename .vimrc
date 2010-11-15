@@ -270,13 +270,13 @@ let Tlist_Compact_Format = 1
 let Tlist_Show_Menu = 1 
 
 " --------- Pylint
-autocmd FileType python compiler pylint
+"autocmd FileType python compiler pylint
 " Don't show quickfix window. Manually can be opened by :cope
-let g:pylint_cwindow = 0
+"let g:pylint_cwindow = 0
 " Don't show style errors
-let g:pylint_conventions = 0
+"let g:pylint_conventions = 0
 " Check file 'on fly'
-let g:pylint_onfly = 0
+"let g:pylint_onfly = 0
 
 "---------------------------------------------------------------------
 " Charsets  and locale
