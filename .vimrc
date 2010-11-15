@@ -1,4 +1,4 @@
-"---------------------------------------------------------------------
+	"---------------------------------------------------------------------
 " from Guido
 " vimrc file for following the coding standards specified in PEP 8
 "---------------------------------------------------------------------
@@ -79,6 +79,9 @@ filetype plugin on
 " Keep indentation level from previous line: 
 set autoindent
 
+" Disable read-only protection
+set modifiable
+
 "---------------------------------------------------------------------
 " Python IDE relatd staff
 "---------------------------------------------------------------------
@@ -91,6 +94,13 @@ au BufRead,BufNewFile *.py,*.pyw,*.c  autocmd CursorMoved * silent! exe printf('
 
 " Folding based on indentation:
 " set foldmethod=indent
+
+"---------------------------------------------------------------------
+" File formats support 
+"---------------------------------------------------------------------
+
+" Json
+au! BufRead,BufNewFile *.json setfiletype json 
 
 "---------------------------------------------------------------------
 " gVim - related staff
@@ -189,6 +199,7 @@ hi Tb_VisibleChanged ctermbg=black ctermfg=magenta " Colour of current changed t
 " totalcommander, file explorer. Required NERDTree plugin
 noremap <silent> <F10> :NERDTreeToggle<CR>
 let NERDTreeWinSize = 25 
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.swp$', '\~$']
 
 " --------- Projects
 let g:proj_flags = "imstg"
