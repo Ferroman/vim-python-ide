@@ -156,6 +156,21 @@ setlocal numberwidth=4
 
 set fillchars=fold:-
 
+" Exit from insert mode
+imap jj <Esc>
+
+"---------------------------------------------------------------------
+" Vim 7.3 configs
+"---------------------------------------------------------------------
+
+" Persistent undo
+set undodir=/tmp/
+set undofile
+
+set relativenumber
+" disable relativenumbers for NerdTree buffer
+autocmd FileType nerdtree setlocal norelativenumber
+
 "---------------------------------------------------------------------
 " completion
 "---------------------------------------------------------------------
