@@ -145,7 +145,7 @@ set hidden
 set winminheight=1
 
 " Wrap on these
-set whichwrap+=<,>,[,]
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set whichwrap+=<,>,[,]
 
 " Use the cool tab complete menu
 set wildmenu
@@ -166,6 +166,7 @@ imap jj <Esc>
 " Persistent undo
 set undodir=/tmp/
 set undofile
+set colorcolumn=120
 
 set relativenumber
 " disable relativenumbers for NerdTree buffer
