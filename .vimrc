@@ -160,19 +160,6 @@ set fillchars=fold:-
 imap jj <Esc>
 
 "---------------------------------------------------------------------
-" Vim 7.3 configs
-"---------------------------------------------------------------------
-
-" Persistent undo
-set undodir=/tmp/
-set undofile
-set colorcolumn=120
-
-set relativenumber
-" disable relativenumbers for NerdTree buffer
-autocmd FileType nerdtree setlocal norelativenumber
-
-"---------------------------------------------------------------------
 " completion
 "---------------------------------------------------------------------
 
@@ -235,6 +222,18 @@ nmap <F2> :w<CR>
 imap <S-F2> <Esc>:wa<CR>a
 nmap <S-F2> :wa<CR>
 
+"---------------------------------------------------------------------
+" Vim 7.3 configs
+"---------------------------------------------------------------------
+
+" Persistent undo
+set undodir=/tmp/
+set undofile
+set colorcolumn=120
+
+set relativenumber
+" disable relativenumbers for NerdTree buffer
+autocmd FileType nerdtree setlocal norelativenumber
 
 "---------------------------------------------------------------------
 " HTML settings
@@ -290,7 +289,7 @@ autocmd FileType python compiler pylint
 " Don't show quickfix window. Manually can be opened by :cope
 let g:pylint_cwindow = 0
 " Don't show style errors
-let g:pylint_conventions = 0
+let g:pylint_conventions = 1
 " Check file 'on fly'
 let g:pylint_onfly = 0
 
