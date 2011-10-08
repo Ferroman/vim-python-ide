@@ -126,9 +126,12 @@ set lazyredraw
 " Include $HOME in cdpath
 let &cdpath=','.expand("$HOME")
 
-" Disable backup files
-set noswapfile
-set nobackup
+" Enable backup files in temp folder
+set noswapfile " disable swap - all buffers will be opened in memory
+set backup
+set backupdir=/tmp
+set backupskip=/tmp/*
+set writebackup
 
 " Set mouse mod
 set mouse=a
@@ -212,7 +215,7 @@ let g:proj_flags = "imstg"
 "---------------------------------------------------------------------
 
 setlocal foldcolumn=1
-set number
+"set number
 
 " сохранение текущего буфера
 imap <F2> <Esc>:w<CR>a
