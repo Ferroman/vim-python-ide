@@ -179,8 +179,12 @@ function s:Svndiff_update(...)
 		return 0
 	end
 
+	" skip new files created in vim buffer
+	if ! filereadable(fname)
+		return 0
+	end
+
 	" Guess RCS type for this file
-	
 	if ! has_key(s:rcs_type, fname) 
 
 		let info = system("LANG=C svn info " . fname)
@@ -367,7 +371,7 @@ function Svndiff(...)
 	let cmd = exists("a:1") ? a:1 : ''
 	let fname = bufname("%")
 	if fname == ""
-		echom "Buffer has no file name, can not do a svn diff"
+		echom "Buffer has no file name, can not do a diff"
 		return
 	endif
 
